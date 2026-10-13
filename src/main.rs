@@ -1,19 +1,29 @@
+fn print_hi() {
+    println!("hi");
+}
+
+fn print_number(number: i32) {
+    println!("{number}");
+}
+
+fn print_initials(first: char, last: char) {
+    println!("{first}.{last}")
+}
+
+fn approximate_pi() -> f32 {
+    3.1415926535897932384
+}
+
 fn main() {
-    // Mutability
-    let mut some_random_variable = "hi";
-    println!("the secret message is {some_random_variable}");
-    some_random_variable = "bye";
-    println!("the new secret message is {some_random_variable}");
+    // functions
+    print_hi();
 
-    // Constants
-    const SOME_RANDOM_CONST: &str = "hi this is some useless const";
-    println!("const data: {SOME_RANDOM_CONST}");
+    // parameters
+    print_number(5);
 
-    // Shadowing
-    let one = 1;
-    {
-        let one = one * 5;
-        println!("{one}");
-    }
-    println!("{one}");
+    print_initials('M', 'U');
+
+    // Functions with return values
+    let pi = approximate_pi();
+    println!("pi: {pi}");
 }
