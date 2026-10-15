@@ -1,29 +1,14 @@
-fn print_hi() {
-    println!("hi");
-}
-
-fn print_number(number: i32) {
-    println!("{number}");
-}
-
-fn print_initials(first: char, last: char) {
-    println!("{first}.{last}")
-}
-
-fn approximate_pi() -> f32 {
-    3.1415926535897932384
-}
-
 fn main() {
-    // functions
-    print_hi();
+    // Comments
+    // I'm a comment!
 
-    // parameters
-    print_number(5);
+    /* I
+     * am
+     * a
+     * multilined
+     * comment
+     * :)
+     */
 
-    print_initials('M', 'U');
-
-    // Functions with return values
-    let pi = approximate_pi();
-    println!("pi: {pi}");
+    println!("HI"); // This is a macro. What is a macro? i dont know.
 }
