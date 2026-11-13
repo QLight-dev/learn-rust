@@ -1,20 +1,16 @@
 fn main() {
-    // Boxes
-    let color = Box::new("green"); // Moves "green" on the heap and color points the to value "green" 
-    println!("{color}");
-
-    // cloning
-    let student_year = vec![2, 11, 3, 4, 8];
-    let new = advance_to_next_year(student_year.clone());
-
-    for student in &student_year {
-        println!("{student}");
-    }
+    // Referencing
+    let word = String::from("Bonjour");
+    let translated = translate_word(&word);
+    println!("{} is in {}", word, translated);
 }
 
-fn advance_to_next_year(mut student_year: Vec<i32>) -> Vec<i32> {
-    for student in &mut student_year {
-        *student += 1;
+fn translate_word(word: &str) -> String {
+    if word == "Hello" {
+        return "English".to_string();
+    } else if word == "Bonjour" {
+        return "French".to_string();
+    } else {
+        return "Unknown language".to_string();
     }
-    student_year
 }
