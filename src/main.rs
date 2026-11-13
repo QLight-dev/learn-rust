@@ -1,12 +1,12 @@
-fn main() {
-    // Defining structs
-    struct Student {
-        student_id: String,
-        grade: i32,
-        name: String,
-        parent_name: String,
-    }
+// Defining structs
+struct Student {
+    student_id: String,
+    grade: i32,
+    name: String,
+    parent_name: String,
+}
 
+fn main() {
     // Instantiating structs
     let student1 = Student {
         student_id: String::from("1653"),
@@ -21,7 +21,7 @@ fn main() {
     );
 
     // Creating Instances with Struct Update Syntax
-    let new_student1 = Student {
+    let mut new_student1 = Student {
         grade: 6,
         ..student1
     };
@@ -29,5 +29,16 @@ fn main() {
     println!(
         "the new {}'s student id is {}, and his updated grade is {}",
         new_student1.name, new_student1.student_id, new_student1.grade
-    )
+    );
+
+    advance_next_grade(&mut new_student1);
+
+    println!(
+        "{}'s grade is now {}",
+        new_student1.name, new_student1.grade
+    );
+}
+
+fn advance_next_grade(student: &mut Student) {
+    student.grade += 1
 }
